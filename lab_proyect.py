@@ -23,4 +23,7 @@ class Pawn(Player):
         self.moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
     def level_up(self):
-        pass
+        diagonal = [(1,1),(1,-1),(-1,1),(-1,-1)]
+        for move in diagonal:
+            if move not in self.moves:
+                self.moves.append(move)
