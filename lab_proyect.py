@@ -6,5 +6,8 @@ class Player(abc.ABC):
         self.moves = []
         self.position = (0, 0)
         self.path = [self.position]
-    def make_moves(self):
-        pass
+    def make_move(self):
+        move = random.choice(self.moves)
+        self.position = (self.position[0] + move[0], self.position[1] + move[1])
+        self.path.append(self.position)
+        return self.position
